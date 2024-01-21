@@ -26,7 +26,7 @@ function Home2({isPlaying,setPlaying}) {
         {isPlaying ?
         (<img onClick={() => { setPlaying(!isPlaying) }} src={Wave} width={50} alt="Wave" />)
         :
-        (<PlayArrowIcon sx={{color: "#8a49a8", fontSize: 60}} onClick={() => { setPlaying(!isPlaying) }}/>)
+        (<PlayArrowIcon className="play-button" sx={{color: "#8a49a8", fontSize: 40}} onClick={() => { setPlaying(!isPlaying) }}/>)
         }
       </Box>
       <Container>
