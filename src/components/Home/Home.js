@@ -4,7 +4,8 @@ import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-
+import Wave from "../../Assets/pre.svg"
+import { Box } from "@mui/material";
 function Home() {
   return (
     <section>
@@ -39,6 +40,13 @@ function Home() {
               />
             </Col>
           </Row>
+          <Box sx={{
+            position: "fixed",
+            zIndex: "999px",
+            bottom: 20
+          }}>
+            <img src={Wave} width={50}/>
+          </Box>
         </Container>
       </Container>
       <Home2 />
