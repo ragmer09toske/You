@@ -5,8 +5,7 @@ import PauseIcon from '@mui/icons-material/Pause';
 import MeHolbertonVideo from '../../Assets/me_holberton.mp4';
 import SeparateAudioFile from '../../Assets/audio.mp4';
 import pre from "../../Assets/pre.svg"
-const VideoPlayer = () => {
-  const [isPlaying, setPlaying] = useState(false);
+const VideoPlayer = ({isPlaying,setPlaying}) => {
   const [volume, setVolume] = useState(0.8);
   const videoRef = useRef(null);
   const audioRef = useRef(null);
@@ -80,7 +79,7 @@ const VideoPlayer = () => {
 
       <div style={{ marginTop: 20, padding: 20, display: 'flex', alignItems: 'center' }}>
         <IconButton onClick={handlePlayPause}>
-          {isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
+          {isPlaying ? <PauseIcon sx={{color: "lightblue"}}/> : <PlayArrowIcon sx={{color: "lightblue"}}/>}
         </IconButton>
 
         <Slider

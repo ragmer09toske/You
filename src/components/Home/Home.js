@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import Wave from "../../Assets/pre.svg"
 import { Box } from "@mui/material";
 function Home() {
+  const [isPlaying, setPlaying] = useState(false);
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -40,16 +41,10 @@ function Home() {
               />
             </Col>
           </Row>
-          <Box sx={{
-            position: "fixed",
-            zIndex: "999px",
-            bottom: 20
-          }}>
-            <img src={Wave} width={50}/>
-          </Box>
+          
         </Container>
       </Container>
-      <Home2 />
+      <Home2 isPlaying={isPlaying} setPlaying={setPlaying}/>
     </section>
   );
 }
