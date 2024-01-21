@@ -382,6 +382,13 @@ button:focus {
   box-shadow: 0 0 15px #801f95;
 }
 
+.play-button {
+  border-radius: 50%;
+  color: #87209e;
+  box-shadow: 0 0 5px #87209e;
+  text-shadow: 0 0 2px #87209e;
+}
+
 .home-social-icons:hover {
   color: #87209e;
   box-shadow: 0 0 5px #87209e;
