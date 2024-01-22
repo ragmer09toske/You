@@ -59,25 +59,25 @@ export const Milestones = () => {
       ]
     },
     {
+      date: "2023 January 03",
+      textLines: [
+        "Founded Nucleus, a Software Engineering",
+        "Company, that works hand in hand with other",
+        "businesses, either to maintain or build",
+        "their business software from scratch",
+      ]      
+    },
+    {
       date: "2023 July 08",
       textLines: [
         "Featured by UNDP to sit among the greatest",
         "leaders in my country as one of the panel",
         "members and as the Innovator of my creative",
         "nation.",
-        "You can watch the video on this link:",
-        "https://youtu.be/qo_wjWTjFHE?si=n8Gg_gjFSED3gvqE"
       ]
     },
     {
-      date: "2026 May 16",
-      textLines: [
-        "Received ‘Young Innovator’ award",
-        "for contributions to open-source"
-      ]
-    },
-    {
-      date: "2027 August 23",
+      date: "2023 August 23",
       textLines: [
         "Co-founded NeuraNet Inc.",
         "advancing neural network research"
@@ -111,7 +111,20 @@ export const Milestones = () => {
                   {line}
                 </text>
               ))}
-
+              {/* Clickable Link */}
+          {milestone.link && (
+            <a href={milestone.link} target="_blank" style={{ textDecoration: 'none' }}>
+              <text
+                x={70}
+                y={(cy + circleRadius + milestone.textLines.length * 15 + 20) + (milestone.textLines.length * 15)}
+                fontSize="15"
+                fill="#87209e"
+                textAnchor="start"
+              >
+                {milestone.link}
+              </text>
+            </a>
+          )}
               {/* Date Text Detail */}
               <text
                 x={70}
