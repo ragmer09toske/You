@@ -748,3 +748,23 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 100%;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.drawLineAnimation {
+  stroke-dasharray: 100%;
+  animation: drawLine 1s ease forwards;
+}
+
+/* Optional: Set the initial state for the lines if they need to be invisible */
+line {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+}
+
