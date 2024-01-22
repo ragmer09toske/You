@@ -41,7 +41,7 @@ function NavBar() {
         <Navbar.Brand href="/" className="d-flex">
           <h1 className="img-fluid logo"><b>Ray.mond.09</b></h1>
         </Navbar.Brand>
-        <Navbar.Toggle
+        {/* <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
             updateExpanded(expand ? false : "expanded");
@@ -50,8 +50,8 @@ function NavBar() {
           <span></span>
           <span></span>
           <span></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
+        </Navbar.Toggle> */}
+        {/* <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
@@ -113,7 +113,7 @@ function NavBar() {
               </Button>
             </Nav.Item>
           </Nav>
-        </Navbar.Collapse>
+        </Navbar.Collapse> */}
       </Container>
     </Navbar>
   );
