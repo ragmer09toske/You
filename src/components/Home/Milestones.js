@@ -77,6 +77,13 @@ export const Milestones = () => {
       ]
     },
     {
+      date: "2023 October 01",
+      textLines: [
+        "Became an In-House Software Engineer at",
+        "Holberton Lesotho"
+      ]
+    },
+    {
       date: "2023 August 23",
       textLines: [
         "Co-founded NeuraNet Inc.",
