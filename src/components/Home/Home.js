@@ -5,6 +5,7 @@ import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 import { Box } from "@mui/material";
+import { Milestones } from "./Milestones";
 function Home() {
   const [isPlaying, setPlaying] = useState(false);
 
@@ -33,12 +34,7 @@ function Home() {
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
+              <Milestones />
             </Col>
           </Row>
           
