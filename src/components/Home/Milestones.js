@@ -36,24 +36,37 @@ export const Milestones = () => {
   // Unique details for each milestone
   const milestonesDetails = [
     {
-      date: "2023 October 06",
+      date: "2013 October 06",
       textLines: [
-        "Graduated from university",
-        "as Software Engineer"
+        "Secured First Place in a National Science Fair",
+        "Category: Technology",
+        "Developed an innovative smart home utilizing",
+        "Internet of Things (IoT) technology for",
+        "seamless connectivity",
+        " ",
+        "I was a student at:",
+        "New Millinium"
       ]
     },
     {
-      date: "2024 April 12",
+      date: "2018 November 12",
       textLines: [
-        "Launched first mobile app",
-        "‘BudgetWise’ on App Store"
+        "Won First Place with My Partner",
+        "Khotso Mphasi,",
+        "at the Inaugural Future Engineers",
+        "Competition at University of",
+        "Lerotholi Polytechnic"
       ]
     },
     {
-      date: "2025 July 08",
+      date: "2023 July 08",
       textLines: [
-        "Spoke at Tech Innovators Conference",
-        "about ‘The Future of AI'"
+        "Featured by UNDP to sit among the greatest",
+        "leaders in my country as one of the panel",
+        "members and as the Innovator of my creative",
+        "nation.",
+        "You can watch the video on this link:",
+        "https://youtu.be/qo_wjWTjFHE?si=n8Gg_gjFSED3gvqE"
       ]
     },
     {
@@ -74,7 +87,7 @@ export const Milestones = () => {
 
   return (
     <Box>
-      <svg ref={ref} width="100%" height="2000" xmlns="http://www.w3.org/2000/svg">
+      <svg ref={ref} width="100%" height="1000" xmlns="http://www.w3.org/2000/svg">
         {milestonesDetails.map((milestone, index) => {
           const cy = 50 + index * 200; // Calculate the Y position for each milestone
           return (
