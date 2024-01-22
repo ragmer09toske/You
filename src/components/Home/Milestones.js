@@ -33,35 +33,90 @@ export const Milestones = () => {
   const circleStrokeWidth = 3;
   const gap = circleStrokeWidth / 2;
 
-  // This function generates the repeated text for each milestone.
-  const renderMilestoneText = (cx, cy, milestoneNumber) => (
-    <>
-      {/* Milestone number */}
-      <text x={cx} y={cy} fontSize="12" textAnchor="middle" fill="#87209e" dominantBaseline="middle">{milestoneNumber}</text>
-
-      {/* Detail text */}
-      <text x={cx + 20} y={cy + circleRadius + 20} fontSize="15" fill="#87209e" textAnchor="start">Graduated from university</text>
-      <text x={cx + 20} y={cy + circleRadius + 35} fontSize="15" fill="#87209e" textAnchor="start">2023 October 06</text>
-      <text x={cx + 20} y={cy + circleRadius + 55} fontSize="15" fill="#87209e" textAnchor="start">Started job at Holborton</text>
-      <text x={cx + 20} y={cy + circleRadius + 70} fontSize="15" fill="#87209e" textAnchor="start">as Software Engineer</text>
-      <text x={cx + 20} y={cy + circleRadius + 85} fontSize="15" fill="#87209e" textAnchor="start">October 10, 2023</text>
-    </>
-  );
+  // Unique details for each milestone
+  const milestonesDetails = [
+    {
+      date: "2023 October 06",
+      textLines: [
+        "Graduated from university",
+        "as Software Engineer"
+      ]
+    },
+    {
+      date: "2024 April 12",
+      textLines: [
+        "Launched first mobile app",
+        "‘BudgetWise’ on App Store"
+      ]
+    },
+    {
+      date: "2025 July 08",
+      textLines: [
+        "Spoke at Tech Innovators Conference",
+        "about ‘The Future of AI'"
+      ]
+    },
+    {
+      date: "2026 May 16",
+      textLines: [
+        "Received ‘Young Innovator’ award",
+        "for contributions to open-source"
+      ]
+    },
+    {
+      date: "2027 August 23",
+      textLines: [
+        "Co-founded NeuraNet Inc.",
+        "advancing neural network research"
+      ]
+    }
+  ];
 
   return (
     <Box>
       <svg ref={ref} width="100%" height="2000" xmlns="http://www.w3.org/2000/svg">
-        {/* Consistently generate milestone circles and text */}
-        {[50, 250, 450, 650, 850].map((cy, index) => (
-          <React.Fragment key={`milestone-${index}`}>
-            <circle cx="50" cy={cy} r={circleRadius} stroke="#87209e" strokeWidth={circleStrokeWidth} fill="#87209e28" />
-            {renderMilestoneText(50, cy, index + 1)}
-            {/* Connect to next milestone if not the last one */}
-            {index < 4 && (
-              <line className={lineClassName} x1="50" y1={cy + circleRadius + gap} x2="50" y2={cy + 200 - circleRadius - gap} stroke="#87209e" strokeWidth="2" />
-            )}
-          </React.Fragment>
-        ))}
+        {milestonesDetails.map((milestone, index) => {
+          const cy = 50 + index * 200; // Calculate the Y position for each milestone
+          return (
+            <React.Fragment key={`milestone-${index}`}>
+              {/* Milestone Circle */}
+              <circle cx="50" cy={cy} r={circleRadius} stroke="#87209e" strokeWidth={circleStrokeWidth} fill="#87209e28" />
+
+              {/* Milestone Number */}
+              <text x="50" y={cy} fontSize="12" textAnchor="middle" fill="#87209e" dominantBaseline="middle">{index + 1}</text>
+
+              {/* Milestone Text Details */}
+              {milestone.textLines.map((line, lineIndex) => (
+                <text
+                  key={`detail-${index}-${lineIndex}`}
+                  x={70}
+                  y={cy + circleRadius + lineIndex * 15 + 20}
+                  fontSize="15"
+                  fill="#87209e"
+                  textAnchor="start"
+                >
+                  {line}
+                </text>
+              ))}
+
+              {/* Date Text Detail */}
+              <text
+                x={70}
+                y={cy + circleRadius + milestone.textLines.length * 15 + 35}
+                fontSize="15"
+                fill="#87209e"
+                textAnchor="start"
+              >
+                {milestone.date}
+              </text>
+
+              {/* Connect to Next Milestone if Not the Last One */}
+              {(index < milestonesDetails.length - 1) && (
+                <line className={lineClassName} x1="50" y1={cy + circleRadius + gap} x2="50" y2={cy + 200 - circleRadius - gap} stroke="#87209e" strokeWidth="2" />
+              )}
+            </React.Fragment>
+          );
+        })}
       </svg>
     </Box>
   );
