@@ -12,6 +12,7 @@ import VideoPlayer from "./VideoPlayer";
 import { Box } from "@mui/material";
 import Wave from "../../Assets/pre.svg"
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import ThreeScene from "../Three/Threescene";
 
 function Home2({isPlaying,setPlaying}) {
   return (
@@ -93,6 +94,7 @@ function Home2({isPlaying,setPlaying}) {
             </ul>
           </Col>
         </Row>
+        <ThreeScene />
       </Container>
     </Container>
   );
