@@ -94,8 +94,8 @@ function Home2({isPlaying,setPlaying}) {
             </ul>
           </Col>
         </Row>
-        <ThreeScene />
       </Container>
+      <ThreeScene />
     </Container>
   );
 }
