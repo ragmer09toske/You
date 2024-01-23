@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Box } from '@mui/material';
+import ThreeScene from '../Three/Threescene';
 
 export const Milestones = () => {
   const [animate, setAnimate] = useState(false);
@@ -35,61 +36,80 @@ export const Milestones = () => {
 
   // Unique details for each milestone
   const milestonesDetails = [
+    // Other milestones...
     {
-      date: "2013 October 06",
+      date: "2024 January 23", // Update the date
       textLines: [
-        "Secured First Place in a National Science Fair",
-        "Category: Technology",
-        "Developed an innovative smart home utilizing",
-        "Internet of Things (IoT) technology for",
-        "seamless connectivity",
-        " ",
-        "I was a student at:",
-        "New Millinium"
+        "Integrated ThreeScene Component", // Update the text lines
+        "Added a 3D scene using Three.js",
+        "to visualize milestones in a creative way",
       ]
     },
     {
-      date: "2018 November 12",
+      date: "2024 January 23", // Update the date
       textLines: [
-        "Won First Place with My Partner",
-        "Khotso Mphasi,",
-        "at the Inaugural Future Engineers",
-        "Competition at University of",
-        "Lerotholi Polytechnic"
+        "Integrated ThreeScene Component", // Update the text lines
+        "Added a 3D scene using Three.js",
+        "to visualize milestones in a creative way",
       ]
     },
     {
-      date: "2023 January 03",
+      date: "2024 January 23", // Update the date
       textLines: [
-        "Founded Nucleus, a Software Engineering",
-        "Company, that works hand in hand with other",
-        "businesses, either to maintain or build",
-        "their business software from scratch",
-      ]      
-    },
-    {
-      date: "2023 July 08",
-      textLines: [
-        "Featured by UNDP to sit among the greatest",
-        "leaders in my country as one of the panel",
-        "members and as the Innovator of my creative",
-        "nation.",
+        "Integrated ThreeScene Component", // Update the text lines
+        "Added a 3D scene using Three.js",
+        "to visualize milestones in a creative way",
       ]
     },
     {
-      date: "2023 October 01",
+      date: "2024 January 23", // Update the date
       textLines: [
-        "Became an In-House Software Engineer at",
-        "Holberton Lesotho"
+        "Integrated ThreeScene Component", // Update the text lines
+        "Added a 3D scene using Three.js",
+        "to visualize milestones in a creative way",
       ]
     },
     {
-      date: "2023 August 23",
+      date: "2024 January 23", // Update the date
       textLines: [
-        "Co-founded NeuraNet Inc.",
-        "advancing neural network research"
+        "Integrated ThreeScene Component", // Update the text lines
+        "Added a 3D scene using Three.js",
+        "to visualize milestones in a creative way",
       ]
-    }
+    },
+    {
+      date: "2024 January 23", // Update the date
+      textLines: [
+        "Integrated ThreeScene Component", // Update the text lines
+        "Added a 3D scene using Three.js",
+        "to visualize milestones in a creative way",
+      ]
+    },
+    {
+      date: "2024 January 23", // Update the date
+      textLines: [
+        "Integrated ThreeScene Component", // Update the text lines
+        "Added a 3D scene using Three.js",
+        "to visualize milestones in a creative way",
+      ]
+    },
+    {
+      date: "2024 January 23", // Update the date
+      textLines: [
+        "Integrated ThreeScene Component", // Update the text lines
+        "Added a 3D scene using Three.js",
+        "to visualize milestones in a creative way",
+      ]
+    },
+    {
+      date: "2024 January 23", // Update the date
+      textLines: [
+        "Integrated ThreeScene Component", // Update the text lines
+        "Added a 3D scene using Three.js",
+        "to visualize milestones in a creative way",
+      ]
+    },
+    // Other milestones...
   ];
 
   return (
@@ -118,20 +138,22 @@ export const Milestones = () => {
                   {line}
                 </text>
               ))}
+
               {/* Clickable Link */}
-          {milestone.link && (
-            <a href={milestone.link} target="_blank" style={{ textDecoration: 'none' }}>
-              <text
-                x={70}
-                y={(cy + circleRadius + milestone.textLines.length * 15 + 20) + (milestone.textLines.length * 15)}
-                fontSize="15"
-                fill="#87209e"
-                textAnchor="start"
-              >
-                {milestone.link}
-              </text>
-            </a>
-          )}
+              {milestone.link && (
+                <a href={milestone.link} target="_blank" style={{ textDecoration: 'none' }}>
+                  <text
+                    x={70}
+                    y={(cy + circleRadius + milestone.textLines.length * 15 + 20) + (milestone.textLines.length * 15)}
+                    fontSize="15"
+                    fill="#87209e"
+                    textAnchor="start"
+                  >
+                    {milestone.link}
+                  </text>
+                </a>
+              )}
+
               {/* Date Text Detail */}
               <text
                 x={70}
@@ -146,6 +168,13 @@ export const Milestones = () => {
               {/* Connect to Next Milestone if Not the Last One */}
               {(index < milestonesDetails.length - 1) && (
                 <line className={lineClassName} x1="50" y1={cy + circleRadius + gap} x2="50" y2={cy + 200 - circleRadius - gap} stroke="#87209e" strokeWidth="2" />
+              )}
+
+              {/* Render ThreeScene as a milestone */}
+              {(index === 2) && (
+                <foreignObject x={0} y={cy - 75} width="100%" height="150">
+                  <ThreeScene />
+                </foreignObject>
               )}
             </React.Fragment>
           );

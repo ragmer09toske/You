@@ -34,7 +34,7 @@ function Home() {
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
-              <Milestones />
+              {/* <Milestones /> */}
             </Col>
           </Row>
           

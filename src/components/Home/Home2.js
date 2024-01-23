@@ -13,6 +13,7 @@ import { Box } from "@mui/material";
 import Wave from "../../Assets/pre.svg"
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import ThreeScene from "../Three/Threescene";
+import { Milestones } from "./Milestones";
 
 function Home2({isPlaying,setPlaying}) {
   return (
@@ -30,6 +31,7 @@ function Home2({isPlaying,setPlaying}) {
         (<PlayArrowIcon className="play-button" sx={{color: "#8a49a8", fontSize: 40}} onClick={() => { setPlaying(!isPlaying) }}/>)
         }
       </Box>
+      <Milestones />
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
